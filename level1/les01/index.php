@@ -41,9 +41,9 @@ $menu = array(
 </header>
 <nav>
   <ul>
-    <?php foreach ($menu as $key => $menuItem) { ?>
+    <?php foreach ($menu as $key => $menuItem) : ?>
       <li><a href="<?=$key?>"><?=$menuItem?></a></li>
-    <?php } ?>
+    <?php endforeach; ?>
   </ul>
 </nav>
 <footer>
