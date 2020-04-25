@@ -1,32 +1,53 @@
 <?php
-//1. Установить программное обеспечение: веб-сервер, базу данных, интерпретатор, текстовый редактор. Проверить, что все работает правильно.
-//2. Выполнить примеры из методички и разобраться, как это работает.
-
-
-//3. Объяснить, как работает данный код:
-//<?php
-//    $a = 5;
-//    $b = '05';
-//    var_dump($a == $b);         // Почему true?
-
-потому что при нетождественном сравнении приводим обе переменные к числу и получаем 5 == 5
-
-//    var_dump((int)'012345');     // Почему 12345?
-
-потому что приведение типа (int) делает из строки число
-
-//    var_dump((float)123.0 === (int)123.0); // Почему false?
-
-потому что не тождественно равно
-
-//    var_dump((int)0 === (int)'hello, world'); // Почему true?
-
-потому что приведение к числу второй строки не может взять из этой строки никакое число, поэтому берет 0 и получаем (int)0 === (int)0
-
-//?>
-
-<!--4. Используя имеющийся HTML-шаблон, сделать так, чтобы главная страница генерировалась через PHP. Создать блок переменных в начале страницы. Сделать так, чтобы h1, title и текущий год генерировались в блоке контента из созданных переменных.-->
-
-
-5. *Используя только две целочисленные переменные, поменяйте их значение местами. Например, если a = 1, b = 2, надо, чтобы получилось b = 1, a = 2. Дополнительные переменные использовать нельзя.
+$year = date("Y");
+$title = 'Noname Company';
+$brand = 'Noname - best clothes';
+$menu = array(
+  "/" => "Home",
+  "/catalog/" => "Catalog",
+  "/about" => "About"
+);
 ?>
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><?= $title ?></title>
+
+  <style>
+    header {
+      height: 50px;
+      display: flex;
+      background-color: wheat;
+      align-items: center;
+      padding: 10px;
+    }
+
+    footer {
+      height: 40px;
+      background-color: silver;
+      line-height: 40px;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo"><?= $brand ?></div>
+</header>
+<nav>
+  <ul>
+    <?php foreach ($menu as $key => $menuItem) { ?>
+      <li><a href="<?=$key?>"><?=$menuItem?></a></li>
+    <?php } ?>
+  </ul>
+</nav>
+<footer>
+  &copy; Noname company, <?= $year ?>
+</footer>
+</body>
+</html>
