@@ -1,0 +1,94 @@
+.form {
+  text-align: center;
+}
+
+.explorer {
+  width: 20%;
+  float: left;
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  border-radius: 5px;
+}
+.explorer .folder {
+  background-color: yellow;
+  padding: 3px;
+}
+.explorer .file {
+  padding: 3px;
+}
+
+.level-1 {
+  margin-left: 0.6em;
+}
+
+.level-2 {
+  margin-left: 1.2em;
+}
+
+.level-3 {
+  margin-left: 1.8em;
+}
+
+.level-4 {
+  margin-left: 2.4em;
+}
+
+.level-5 {
+  margin-left: 3em;
+}
+
+.level-6 {
+  margin-left: 3.6em;
+}
+
+.level-7 {
+  margin-left: 4.2em;
+}
+
+.level-8 {
+  margin-left: 4.8em;
+}
+
+.level-9 {
+  margin-left: 5.4em;
+}
+
+.level-10 {
+  margin-left: 6em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image {
+  float: left;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  border-radius: 5px;
+  margin: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.failed {
+  color: red;
+  padding: 7px;
+}
+
+.good {
+  color: lime;
+  padding: 7px;
+}
+
+.messages {
+  margin: 7px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
