@@ -25,7 +25,7 @@ class UsersRepo extends DbRepo
   {
     $user = new User($name, $login);
     $user->hash = $this->getHash($password);
-    return parent::create($user);
+    return parent::createModel($user);
   }
 
   function getHash(string $password)

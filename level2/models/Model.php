@@ -5,24 +5,47 @@ namespace models;
 
 use interfaces\IModel;
 
-class Model implements IModel
+abstract class Model implements IModel
 {
   protected $id;
+  protected $dbProps = ["id"];
+  protected $changedProps = [];
 
-  /**
-   * @return mixed
-   */
   public function getId()
   {
     return $this->id;
   }
 
-  /**
-   * @param mixed $id
-   */
-  public function setId($id)
+  public function getIdName()
   {
-    $this->id = $id;
+    return "id";
   }
 
+  public function __set($name, $value)
+  {
+    if (property_exists($this, $name)) {
+      if ($this->$name !== $value) {
+        $this->$name = $value;
+        if  (in_array($name, $this->dbProps)) {
+          $this->changedProps[] = $name;
+        }
+      }
+    }
+  }
+
+  public function __get($name)
+  {
+    if (property_exists($this, $name)) {
+      return $this->$name;
+    }
+  }
+
+  public function getDBProps(): array
+  {
+    return $this->dbProps;
+  }
+
+  public function getChangesProps(): array {
+    return $this->changedProps;
+  }
 }

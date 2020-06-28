@@ -8,7 +8,11 @@ class Autoloader
 {
   public function registerClass(string $className)
   {
+    if (empty($className)) {
+      return;
+    }
     $path = realpath(__DIR__ . "/../" . $className . ".php");
-    require $path;
+//    var_dump($path);
+    require_once $path;
   }
 }

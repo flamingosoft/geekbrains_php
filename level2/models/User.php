@@ -26,13 +26,4 @@ class User implements IModel
     $this->login = $login;
   }
 
-  public function getId()
-  {
-    return $this->id;
-  }
-
-  public function setId($value)
-  {
-    $this->id = $value;
-  }
 }

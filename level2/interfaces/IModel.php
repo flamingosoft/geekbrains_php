@@ -6,7 +6,8 @@ namespace interfaces;
 
 interface IModel
 {
+  public function getIdName();
   public function getId();
-
-  public function setId($value);
+  public function getDBProps(): array;
+  public function getChangesProps(): array;
 }
